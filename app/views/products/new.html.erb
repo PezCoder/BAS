@@ -1,0 +1,19 @@
+<div class="products new">
+	<div class="panel panel-default">
+
+		<div class="panel-heading">
+			<h3>Post an advertisement</h3>
+		</div>
+		<div class="panel-body">
+			<%= form_for(:product,:url=>{:action=>'create'},:html => { :multipart => true }) do |f| %>
+
+				<%= render(:partial=>'shared/form_product',:locals=>{:f=>f,:creating_product=>true}) %>
+					
+			<%= submit_tag("Post my AD",class:'btn btn-success margin-top-10') %>
+
+			<% end %>
+		</div>
+	</div>
+	
+	
+</div>

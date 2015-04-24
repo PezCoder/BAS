@@ -1,0 +1,73 @@
+
+<label class="margin-top-10">Title</label>
+<%= f.text_field(:title,{placeholder:'Enter title here..',class:'form-control'}) %>
+
+
+<label class="margin-top-10">Category</label>
+<%= f.select(:category,@categories,{},{:class=>'form-control'}) %>
+
+<label class="margin-top-10">Sub Category</label>
+<%= f.select(:sub_category,@sub_categories,{},{:class=>'form-control'}) %>
+
+
+<label class="margin-top-10">Product Type</label>
+<%= f.select(:product_type,@product_types,{},{:class=>'form-control'}) %>
+
+
+<label class="margin-top-10">Brand</label>
+<%= f.select(:brand,@brands,{},{:class=>'form-control'}) %>
+
+<label class="margin-top-10">Condition</label>
+		<div class="radio">
+			<label class="radio-inline"> <%= f.radio_button(:used,true,:checked=>true) %> Used</label>
+	
+			<label class="radio-inline"><%= f.radio_button(:used,false) %> New</label>
+		</div>
+
+<!-- Show bid options only on creating new, i.e user can't edit bid -->
+<% if creating_product %>
+	 <label>Bidding </label>
+	 <div class="checkbox">
+		<label class="margin-top-10"><%= f.check_box(:can_bid) %>Allow Bidding </label>
+	</div>
+			
+	<div class="bid_range">
+		 <div class="row">
+		 	<div class="col-md-6">
+				<label class="margin-top-10">Minimum bid</label>
+		 	</div>
+		 	<div class="col-md-6">
+				<label class="margin-top-10">Maximum bid</label>
+		 	</div>
+		 </div>
+
+		 <div class="row">
+		 	<div class="col-md-6">
+		 		<%= f.text_field(:min_bid,class:'form-control',placeholder:'ex : 0') %>
+		 	</div>
+		 	<div class="col-md-6">
+		 		<%= f.text_field(:max_bid,class:'form-control',placeholder:'ex : 1000') %>
+		 	</div>
+		 </div>
+	
+	</div>
+
+<% else %>
+
+	<label>Bidding </label>
+	 <div class="checkbox disabled">
+		<label class="margin-top-10"><%= f.check_box(:can_bid,{disabled:true}) %>Allow Bidding </label>
+	</div>
+
+<% end %>
+	
+<label class="margin-top-10">Price</label>
+<%= f.text_field(:price,class:'form-control',placeholder:'Enter price..') %>
+
+<label class="margin-top-10">Description</label>
+<%= f.text_area(:description,:size=>'20x5',:placeholder=>'Enter description...',class:'form-control') %>
+
+<label for="image">Upload product image</label>
+<%= f.file_field :image %>
+
+	

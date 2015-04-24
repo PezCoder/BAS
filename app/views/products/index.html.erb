@@ -1,0 +1,72 @@
+<div class="row products index">
+
+	<h2>Select product..</h2>
+	<hr>
+		<div class="col-md-2 cat-subcat">
+			<div class="inside_border">
+				<h4><span class="glyphicon glyphicon-filter"></span>Filters :</h4>
+				<hr>
+				<p><%= link_to(down_arrow + "All Categories",{:action=>'index'}) %></p>
+				<ul class="categories">
+					<% @categories.each do |category| %>
+					<li><%= link_to_unless_current(down_arrow + category,{:action=>'index',:category=>category}) %>
+
+					<ul class="sub_categories">
+					<!-- get index of category and get the respective array from multidimenstional array sub_categories -->
+					<% @sub_categories[@categories.index(category)].each do |sub_category| %>
+						<li><%= link_to_unless_current(down_arrow + sub_category,
+						{:action=>'index',:sub_category=>sub_category} ) %></li>
+					<% end %>
+					</ul>
+					</li>
+					<% end %>
+				</ul>
+				
+				<hr>
+				
+
+				<p><%= down_arrow %>Product Types</p>
+				<ul class="product_types">
+					<% @product_types.each do |p_type| %>
+					<li><%= link_to_unless_current(down_arrow + p_type,{:action=>'index',:product_type=>p_type}) %></li>
+					<% end %>
+				</ul>
+				
+				<hr>
+				
+				<p><%= down_arrow %>Brands</p>
+				<ul class="brands ">
+					<% @brands.each do |brand| %>
+					<li><%= link_to_unless_current(down_arrow + brand,:action=>'index',:brand=>brand )%></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+
+	<div class="col-md-7 all-products">
+		<div class="inside_border">
+			<h4> <%= pluralize(@products.count,'Product') %> Found </h4>
+			<hr>  
+			<% @products.each do |product| %>
+					<div class="each_index_product media">
+						<div class="image-container thumnail pull-left">
+							<%= image_tag product.image.url %>
+						</div>
+						<div class="media-body">
+							<%= link_to({:action=>'show',:id=>product.id},:class=>'each_product_link') do %>
+									<h3><%= product.title %></h3>
+							<% end %>
+								<p class="description"><%= product.description %></p>
+								<p class="price"><strong>Rs.<%= product.price %></strong></p>
+						</div>
+					</div>
+				<hr>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-md-3 other_ads">
+		<div class="inside_border">
+			<p>Hello there</p>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,65 @@
+<div class="users show_messages">
+
+	<!-- this render is using @products -->
+	<div class="product_details">
+		<!-- Users#show_messages renders this partial -->
+		<div class="row">
+			<div class="col-md-7">
+				<div class="product_details panel panel-default">
+					<div class="panel-heading">
+						<h3><%= @product.title %></h3>
+						<%= link_to("Edit",:controller=>'products',:action=>'edit',:id=>@product.id) %>
+						<%= link_to("Delete",:controller=>'products',:action=>'destroy',:id=>@product.id) %>
+					</div>
+					<div class="panel-body">
+						<p><strong>Description: </strong> <%= @product.description %></p>
+						<p><strong>Category: </strong><%= @product.category %></p>
+						<p><strong>Sub-Category: </strong><%= @product.sub_category %></p>
+						<p><strong>Product Type: </strong><%= @product.product_type %></p>
+						<p><strong>Brand: </strong><%= @product.brand %></p>
+						<p><strong>Condition: </strong><%= @product.used ? 'Used' : 'New'%></p>
+						<p><strong>Bidding: </strong><%= @product.can_bid ? 'Allowed' : 'Not Allowed' %> </p>
+							<% if @product.can_bid %>
+								<p>Min Bid - <%= @product.bids.first.min_bid || '0'%> </p>
+								<p>Max Bid - <%= @product.bids.first.max_bid || '0'%> </p>
+							<% end %>
+						
+						<p><strong>Price: </strong>Rs<%= @product.price %></p>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-5">
+				<%= image_tag @product.image.url(:large) %>
+			</div>
+		</div>
+		
+<div class="messages_list">
+	<h2>Messages</h2>
+	<% if @product.messages.empty? %>
+		<p> No messages Yet </p>
+	<% else %>
+		<% @messages.each do |msg| %>
+			<div class="each_message">
+				<h3><%= msg.user.name %></h3>
+				<p><%= msg.message %></p>
+			</div>
+		<% end %>
+	<% end %>
+</div>
+</div>
+<% if @product.can_bid %>
+	<div class="bids_list">
+		<h2>Bids</h2>
+		<% @bids.each do |bid| %>
+			<% if bid.value %>
+				<div class="each_bid">
+					<h3><%= bid.user.name %></h3>
+					<p><%= bid.value %></p>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+<% end %>
+</div>

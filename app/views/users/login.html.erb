@@ -1,0 +1,42 @@
+<div class="users login">
+<br>
+<div class="row">
+	<!-- LOGIN FORM -->
+	<div class="col-sm-3 col-md-offset-1">
+		<div class="panel panel-primary">
+			<div class="panel-heading">SIGN IN</div>
+			<div class="panel-body">
+				<%= form_tag(:action=>'login_attempt') do %>
+					
+					<label for="username" class="control-label">Username:</label>
+					<%= text_field_tag(:username,nil,class:'form-control')%>
+				
+					<label for="password" class="control-label padding-top-10">Password:</label>
+					<%= password_field_tag(:password,nil,class:'form-control')%><br>
+					<%= submit_tag("Login",class:"btn btn-primary") %>
+				
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<!-- REGISTRATION FORM -->
+	<div class="col-sm-6 col-md-offset-1">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+			 	Register 
+			</div>
+			<div class="panel-body">
+				
+				<%= form_for(:user,:url=>{:action=>'create'},:html => { :multipart => true }) do |f| %>
+				
+				<%= render(:partial=>'shared/form_user',:locals=>{:f=>f,:creating_user=>true}) %>
+				
+				<%= submit_tag("Create account",class:'btn btn-primary margin-top-10') %>
+				
+				<% end %>
+				</div>
+		</div>
+	</div>
+	</div>
+</div>

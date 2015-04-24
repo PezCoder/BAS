@@ -1,0 +1,25 @@
+<!-- Users#show_messages renders this partial -->
+<div class="product_details panel panel-default">
+		<div class="panel-heading">
+			 <h3><%= @product.title %></h3>
+			 <%= link_to("Edit",:controller=>'products',:action=>'edit',:id=>@product.id) %>
+			<%= link_to("Delete",:controller=>'products',:action=>'destroy',:id=>@product.id) %>
+		
+		</div>
+		<div class="panel-body">
+			<label>Description</label><p><%= @product.description %></p>
+			<label>Category</label><p><%= @product.category %></p>
+			<label>Sub-Category</label><p><%= @product.sub_category %></p>
+			<label>Product Type</label><p><%= @product.product_type %></p>
+			<label>Brand</label><p><%= @product.brand %></p>
+			<label>Condition</label><p><%= @product.used ? 'Used' : 'New'%></p>
+			<label>Bidding</label><p><%= @product.can_bid ? 'Allowed' : 'Not Allowed' %> </p>
+				<% if @product.can_bid %>
+					<p>Min Bid - <%= @product.bids.first.min_bid || '0'%> </p>
+					<p>Max Bid - <%= @product.bids.first.max_bid || '0'%> </p>
+				<% end %>
+			
+			<label>Price</label><p>Rs<%= @product.price %></p>
+
+		</div>
+</div>

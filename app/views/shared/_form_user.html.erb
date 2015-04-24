@@ -1,0 +1,58 @@
+	
+	<% if creating_user %>
+	<div class="row">
+		<div class="col-md-6">
+			<label for="user_username" class="control-label">Username</label>
+		</div>
+		<div class="col-md-6">
+			<label for="user_password" class="control-label">Password</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<%= f.text_field(:username,class:'form-control') %>	
+		</div>
+		<div class="col-md-6">
+			<%= f.password_field :password,class:'form-control' %>	
+		</div>
+	</div>
+	
+	<% else %>
+	<!-- Options when User is editing its details -->
+	<div class="row">
+		<div class="col-md-6">
+			<label for="user_username" class="control-label">Username</label>
+		</div>
+		<div class="col-md-6">
+			<label for="user_password" class="control-label padding-top-10">Change Password:</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<%= f.text_field(:username,class:'form-control',disabled:true) %>	
+		</div>
+		<div class="col-md-6">
+			<%= f.password_field :password,class:'form-control' %>	
+		</div>
+	</div>
+
+	<% end %>
+	
+	<label for="user_name" class="control-label padding-top-10">Name</label>
+	<%= f.text_field :name ,class:'form-control'%>	
+	
+	<label for="user_city" class="control-label padding-top-10">City</label>
+	<%= f.text_field :city ,class:'form-control'%>	
+
+
+	<label for="user_mobile_no" class="control-label padding-top-10">Mobile No</label>
+	<%= f.text_field :mobile_no,class:'form-control',maxlength:'10' %>	
+
+
+	<label for="user_email" class="control-label padding-top-10">Email</label>
+	<%= f.text_field :email,class:'form-control' %>	
+
+	
+	<label for="profile_image" class="padding-top-10">Profile Image</label>
+	<%= f.file_field :profile_image %> 
+	

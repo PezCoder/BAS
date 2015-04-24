@@ -1,0 +1,77 @@
+<div class="products show">
+
+	<div class="row">
+		<div class="col-md-8 ">
+
+			<!-- 
+				< render(:partial=>'shared/product_details') >
+			-->
+
+			<div class="product_details panel panel-default">
+				<div class="panel-heading">
+					 <h3><%= @product.title %></h3>
+					 <div class="info-container">
+						 <div class="info">
+						 	<span class="glyphicon glyphicon-user"></span> <%= @product.user.name %>
+						 </div>
+						 <div class="info">
+						 <span class="glyphicon glyphicon-phone"></span> <%= @product.user.mobile_no %>
+						 </div>
+					</div>
+				</div>
+				<div class="panel-body">
+					<%= image_tag @product.image.url(:large) %>
+					<hr>
+					<p><strong>Description:</strong><br><%= @product.description %></p>
+					<p><strong>Condition</strong> - <%= @product.used ? 'Used' : 'New'%></p>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-md-4">
+
+		 <!-- remember to include user's name & mobile here in partial -->
+			<div class="send_message">
+				<h3><span class="glyphicons glyphicons-chat"></span> Leave a message </h3>
+				<p>for <%= @product.user.name %></p>
+				<%= form_tag(:controller=>'users',:action=>'send_message',:product_id=>@product.id) do %>
+				<textarea name="message" class="form-control" placeholder="Type message .."></textarea>
+				<%= submit_tag("Send Message",class:"btn btn-primary margin-top-10") %>
+				<% end %>
+			</div>
+			<!-- give option of placing only if bid is available for this product -->
+		<% if @product.can_bid %>
+			<div class="place_bid">
+				<h3> <span class="glyphicon glyphicon-menu-hamburger"></span>Place Your Bid</h3>
+				<%= form_tag(:controller=>'products',:action=>'place_bid',:product_id=>@product.id) do %>
+
+					<p class="min_bid pull-left">Minimum bid: <%= @product.bids.first.min_bid || '0'%></p>
+					<p class="max_bid pull-right">Maximum bid: <%= @product.bids.first.max_bid || '0'%></p>
+				
+						<input name="value" type="number" class="form-control" min="<%= @product.bids.first.min_bid || 0 %>" max="<%= @product.bids.first.max_bid || 0 %>" placeholder="Place your bid here..">
+						<%= submit_tag "Place Bid",class:"btn btn-warning margin-top-10" %>
+					
+				<% end %>
+			</div>
+
+			<div class="bids_list">
+				<h2>Previous Bids</h2>
+				<% @bids.each do |bid| %>
+					<% if bid.value %>
+						<div class="each_bid">
+							<%= image_tag bid.user.profile_image.url(:thumb) %>
+							<h3><%= bid.user.name %></h3>
+							<p><%= bid.value %></p>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+		<% end %>
+		
+	</div>
+</div>
+		
+		
+	
+	
+</div>

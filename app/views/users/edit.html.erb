@@ -1,0 +1,26 @@
+<div class="users edit">
+	<div class="col-md-4">
+		<!-- put user's image here -->
+		<%= image_tag @user.profile_image.url(:large) %>
+	</div>
+
+	<div class="col-md-6 col-md-offset-1">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+					<h4>Edit Profile </h4>
+			</div>
+			<div class="panel-body">
+				<%= form_for(:user,:url=>{:action=>'update',:id=>@user.id}) do |f| %>
+
+					<%= render(:partial=>'shared/form_user',:locals=>{:f=>f,:creating_user=>false}) %>
+
+					<%= submit_tag("Update profile",class:'btn btn-success margin-top-10') %>
+					<%= link_to({:action=>'delete',:id=>@user.id},class:'btn btn-danger margin-top-10') do %>
+						<span class="glyphicon glyphicon-trash"></span> Delete Profile
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	
+</div>

@@ -1,0 +1,10 @@
+<% @products.each do |product| %>
+			<div class="each_product">
+			<%= link_to({:action=>'show',:id=>product.id},:class=>'each_product_link') do %>
+					<h3><%= product.title %></h3>
+			<% end %>
+				<p class="description"><%= product.description %></p>
+				<p class="price">Rs.<%= product.price %></p>
+			</div>
+		<hr>
+	<% end %>

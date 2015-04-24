@@ -1,0 +1,38 @@
+<div class="users index">
+
+	<%= link_to({:controller=>'products',:action=>'new'},class:'post_new_ad') do %>
+		<button class="btn-lg btn-warning"><span class="glyphicon glyphicon-plus"></span> Post an Advertisement
+		</button>
+	<% end %>
+
+
+	<div class="row">
+		<% @products.each do |product| %>
+			<%= link_to({:action=>'show_messages',:product_id=>product.id},class:'each_product_link') do %>
+				<div class="each_product col-md-4 panel" id="each_food_item">
+					<div class="image-container">
+					<%= image_tag product.image.url %>
+					</div>
+					<div class="details">
+							<h4><%= product.title %></h4>
+							<p class="price">Rs.<%= product.price %></p>
+							<%= link_to(:controller=>'products',:action=>'edit',:id=>product.id) do %>
+							<button class="btn btn-info">
+								<span class="glyphicon glyphicon-pencil"></span> Edit Details
+							</button>
+							<% end %>
+
+							<%= link_to(:controller=>'products',:action=>'destroy',:id=>product.id) do %>
+							<button class="btn btn-danger">
+								<span class="glyphicon glyphicon-trash"></span> Delete
+							</button>
+							<% end %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+
+
+
+</div>

@@ -1,0 +1,7 @@
+<div class="users delete">
+<h1>Users Delete</h1>
+	<%= form_tag(:action=>'destroy',:id=>@user.id) do %>
+	<p>Are you sure you want to delete '<%= @user.username %>' account ? </p>
+	<%= submit_tag("Delete account") %>
+	<% end %>
+</div>

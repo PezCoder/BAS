@@ -1,0 +1,268 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "levish-bootstrap.scss";
+/* DEFINE CONSTANTS */
+
+.padding-top-10{
+	padding-top:10px;
+}
+.padding-10{
+	padding:10px;
+}
+.margin-top-10{
+	margin-top:10px;
+}
+.margin-right-10{
+	margin-right:10px;
+}
+.margin-left-10{
+	margin-left:5px;
+}
+/* UNIVERSAL */
+img{
+	border-radius:4px;
+	opacity:0.91;
+	transition:opacity 0.2s ease;
+}
+img:hover{
+	opacity:1;
+}
+
+p,.form-control,.checkbox,.radio,.checkbox-inline,.radio-inline{
+	color:#444;
+}
+
+section{
+	padding-top:27px;
+}
+body{
+
+}
+
+nav.navbar{
+	border:0;
+	border-radius:0;
+	margin-bottom:0;
+}
+nav ul.nav{
+	display:inline-block;
+	float:right;
+}
+nav .navbar-header a{
+	font-size:30px;
+	letter-spacing:0.1em;
+}	
+nav .navbar-brand img{
+	
+}
+
+.navbar-collapse{
+	display:block;
+}
+
+
+/* Category & Sub Categories */
+.cat-subcat{
+	ul{
+		list-style-type: none;
+		list-style: none;
+		padding-left:20px;
+	}
+	span{
+		margin-right: 5px;
+	}
+	ul li{
+		margin-bottom: 5px;
+	}
+
+}
+
+
+/* Style for index products*/
+
+.all-products,.cat-subcat,.other_ads{
+	
+	.inside_border{
+		border: 1px solid #ccc;
+		border-radius:4px;
+		background-color:white;
+		padding:15px;
+	}
+	// this is seperation between the three columns
+	padding:0 7px;
+	
+}
+
+.all-products > h4{
+	height:22px;
+}
+.all-products{
+	
+	overflow:auto;
+	float:left;
+	a{
+		text-decoration: none;
+	}
+	a:hover{
+
+	}
+	.image-container{
+		margin-right: 15px;
+		display: inline-block;
+		width:200px;
+		height:180px;
+		padding:0;
+		overflow: hidden;
+	}
+	.image-container img{
+		margin:0;
+		width:200px;
+		// the above width is equal to container width
+	}
+}
+/* Each Product display products show*/
+.product_details{
+	border-color:#ccc;
+
+	
+	img{
+		position: center;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.panel-heading{
+		h3{
+			display: inline-block;
+		}
+		div{
+			display: inline-block;
+		}
+		
+		
+	}
+}
+
+.send_message,.place_bid{
+	
+	background-color:#eee;
+	
+	border: 1px solid #ccc;
+	border-radius:3px;
+	padding:25px 30px;
+
+	h3{
+		margin:0;
+		padding-bottom:10px;
+		padding-top:0;
+	}
+}
+
+.send_message{
+	margin-bottom:27px;
+}
+hr{
+	border-color:#ccc;
+}
+
+
+/* FLASH MESSAGES */
+
+.flash{
+	height:42px;
+	position:absolute;
+	top:50px;
+	text-align:center;
+	left:0;
+	right:0;
+	div.alert{
+		width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+
+		padding-top:10px;
+		padding-bottom: 10px;
+		box-shadow: 4px 0px 6px grey;
+	}
+}
+
+/* My Products */
+.users.index{
+
+	position:relative;
+	padding-bottom:40px;
+	background-color:#eee;
+	border:1px solid #ccc;
+	border-radius:3px;
+
+	.post_new_ad{
+		display: inline-block;
+		position:relative;
+		left: 0;
+		top:0;
+		button{
+			border:0;
+			border-radius:3px 0px 0px 0px;
+
+
+		}
+	}
+	a{
+		text-decoration: none;
+	}
+	.container{
+	background-color: white;
+	border-radius:5px;
+	margin-top: 80px;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	}
+	.row{
+		padding-left: 70px;
+		margin-top: 30px;
+	}
+	// This is so image won't strech 
+	.each_product .image-container{
+		display: block;
+		width:250px;
+		height:180px;
+		padding:0;
+		overflow: hidden;
+	}
+	.each_product img{
+		margin:0;
+		width:250px;
+		// the above width is equal to container width
+	}
+	.each_product{
+		overflow:none;
+		text-align: center;
+		width:252px;
+		padding: 0;
+		margin:20px 50px;
+		transition:box-shadow 0.3s ease;
+	}
+
+	.each_product:hover{
+		cursor: pointer;
+		box-shadow: 0px 0px 7px grey;
+	}
+	.each_product .details{
+		padding: 10px;
+		border:1px solid #eee;
+	}
+
+}
+
+/* VIEW User's PROFILE */
+.users.show{
+	background-color:white;
+	padding:20px;
+	.panel{
+		background-color:#eee;
+	}
+}
+
+
+

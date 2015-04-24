@@ -1,0 +1,19 @@
+<div class="products edit">
+	
+	
+	<div class="panel panel-default">
+
+		<div class="panel-heading">
+			<h3>Modify your advertisement</h3>
+		</div>
+
+		<div class="panel-body">
+		<%= form_for(:product,:url=>{:action=>'update',:id=>@product.id},:html => { :multipart => true }) do |f| %>
+			<%= render(:partial=>'shared/form_product',:locals=>{:f=>f,:creating_product=>false}) %>
+			<%= submit_tag("Update Ad",class:'btn btn-success margin-top-10') %>
+		<% end %>
+		</div>
+
+	</div>
+	
+</div>
