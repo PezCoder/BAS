@@ -1,7 +1,9 @@
-== README
+== BAS - Online Market
 BAS ( Buy, Advertise, Sell) is an online market where a user can buy, sell or advertise different products including second hand or new products.
+This is my first web application build completely including front-end and back-end myself.
 Technologies used in making this website :
-1. Rails Framework v4.2.0
-2. HTML, SCSS, jQuery, Bootstrap - To make the website responsive.
+1. Rails Framework v4.2.0 
+2. HTML, SCSS, jQuery, Bootstrap - To make the website responsive. (Front-end)
+3. MySQL - Database used. (Back-end)
 
 
