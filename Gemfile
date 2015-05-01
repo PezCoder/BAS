@@ -12,7 +12,7 @@ gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'autoprefixer-rails', '~> 5.1.7.1'
 
 #font awesome
-gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 4.3.0'
 
 #gem "paperclip", "~> 4.2"
 
