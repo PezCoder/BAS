@@ -11,6 +11,9 @@ gem 'bootstrap-sass', '~> 3.3.4.1'
 #auto-prefixer
 gem 'autoprefixer-rails', '~> 5.1.7.1'
 
+#font awesome
+gem "font-awesome-rails"
+
 #gem "paperclip", "~> 4.2"
 
 # Use SCSS for stylesheets
