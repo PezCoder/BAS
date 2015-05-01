@@ -1,7 +1,5 @@
 <div class="row products index">
-
-	<h2>Select product..</h2>
-	<hr>
+				<!-- 3 column layout -->
 		<div class="col-md-2 cat-subcat">
 			<div class="inside_border">
 				<h4><span class="glyphicon glyphicon-filter"></span>Filters :</h4>
@@ -43,7 +41,19 @@
 			</div>
 		</div>
 
+		
+			
+<!-- DISPLAYING ALL PRODUCTS -->
 	<div class="col-md-7 all-products">
+		<div class="inside_border tagline">
+			<h3>Sell or Post Free Ad
+				<%= link_to({:controller=>'products',:action=>'new'},class:'post_new_ad') do %>
+					<button class="btn-lg btn-warning"><span class="glyphicon glyphicon-plus"></span> Post an Advertisement
+					</button>
+				<% end %> 
+			</h3>
+			
+		</div>
 		<div class="inside_border">
 			<h4> <%= pluralize(@products.count,'Product') %> Found </h4>
 			<hr>  
@@ -57,7 +67,12 @@
 									<h3><%= product.title %></h3>
 							<% end %>
 								<p class="description"><%= product.description %></p>
-								<p class="price"><strong>Rs.<%= product.price %></strong></p>
+								<% if product.can_bid %>
+									<h3>Bidding allowed</h3>
+								<% else %>
+									<p class="price"><strong>Rs.<%= product.price %></strong></p>
+								<% end %>
+								
 						</div>
 					</div>
 				<hr>
@@ -66,7 +81,7 @@
 	</div>
 	<div class="col-md-3 other_ads">
 		<div class="inside_border">
-			<p>Hello there</p>
+			
 		</div>
 	</div>
 </div>

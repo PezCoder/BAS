@@ -10,10 +10,10 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6">
-			<%= f.text_field(:username,class:'form-control') %>	
+		<%= f.text_field(:username,{class:'form-control',placeholder:'Username...'}) %>	
 		</div>
 		<div class="col-md-6">
-			<%= f.password_field :password,class:'form-control' %>	
+			<%= f.password_field :password,{class:'form-control',placeholder:'Password...'} %>	
 		</div>
 	</div>
 	
@@ -32,25 +32,25 @@
 			<%= f.text_field(:username,class:'form-control',disabled:true) %>	
 		</div>
 		<div class="col-md-6">
-			<%= f.password_field :password,class:'form-control' %>	
+			<%= f.password_field :password,class:'form-control',placeholder:'Enter new password...' %>	
 		</div>
 	</div>
 
 	<% end %>
 	
 	<label for="user_name" class="control-label padding-top-10">Name</label>
-	<%= f.text_field :name ,class:'form-control'%>	
+	<%= f.text_field :name ,class:'form-control',placeholder:'Enter your name...' %>	
 	
 	<label for="user_city" class="control-label padding-top-10">City</label>
-	<%= f.text_field :city ,class:'form-control'%>	
+	<%= f.text_field :city ,class:'form-control',placeholder:'Enter your city...' %>	
 
 
 	<label for="user_mobile_no" class="control-label padding-top-10">Mobile No</label>
-	<%= f.text_field :mobile_no,class:'form-control',maxlength:'10' %>	
+	<%= f.text_field :mobile_no,class:'form-control',maxlength:'10',placeholder:'Enter your 10-digit mobile no...' %>	
 
 
 	<label for="user_email" class="control-label padding-top-10">Email</label>
-	<%= f.text_field :email,class:'form-control' %>	
+	<%= f.text_field :email,class:'form-control',placeholder:'Ex : example@example.com' %>	
 
 	
 	<label for="profile_image" class="padding-top-10">Profile Image</label>

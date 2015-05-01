@@ -15,15 +15,24 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-
-$(document).ready(function(){
-	$('#flash_wrapper').hide();
-	$('#flash_wrapper').fadeIn("slow",function(){
-
-	});
+$(document).on("ready page:load", function(){
+	
+	//Notice : Fadein and fadeout
+	$('#notice').addClass('animated fadeInLeft');
 	setTimeout(function(){
-		$('#flash_wrapper').fadeOut("slow",function(){
-			$(this).remove();
-		});
-	},3500);
+		$('#notice').addClass('animated fadeOutRight');
+	},3000);
+
+	//Error & warning messages : Shake
+	$('#error').addClass('animated shake');
+	$('#warning').addClass('animated shake');
+	
 });
+
+// Page change animation
+// $(document).on('page:change', function() {
+//       $('section').addClass('animated zoomIn');
+// });
+ //$(document).on('page:fetch', function() {
+ //        $('section').addClass('animated zoomOut');
+ //});

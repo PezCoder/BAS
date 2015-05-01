@@ -66,6 +66,7 @@ class ProductsController < ApplicationController
     @product = Product.find_by_id(params[:id])
 
     if @product.update_attributes(get_product_details) 
+      flash[:notice]="Ad Updated succesfully."
       redirect_to(:controller=>'users',:action=>'show_messages',:product_id=>@product.id)
     else
       render('edit')
