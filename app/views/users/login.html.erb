@@ -1,42 +1,41 @@
 <div class="users login">
-<br>
-<div class="row">
-	<!-- LOGIN FORM -->
-	<div class="col-sm-3 col-md-offset-1">
-		<div class="panel panel-primary box-shadow">
-			<div class="panel-heading">SIGN IN</div>
-			<div class="panel-body">
-				<%= form_tag(:action=>'login_attempt') do %>
-					
-					<label for="username" class="control-label">Username:</label>
-					<%= text_field_tag(:username,nil,class:'form-control',placeholder:'Username..')%>
-				
-					<label for="password" class="control-label padding-top-10">Password:</label>
-					<%= password_field_tag(:password,nil,class:'form-control',placeholder:'Password..')%><br>
-					<%= button_tag("Sign in",class:"btn btn-lg btn-block btn-success",data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Signing in..."}) %>
-				
-				<% end %>
-			</div>
-		</div>
-	</div>
 
-	<!-- REGISTRATION FORM -->
-	<div class="col-sm-6 col-md-offset-1">
-		<div class="panel panel-primary box-shadow">
-			<div class="panel-heading">
-			 	Register 
-			</div>
-			<div class="panel-body">
-				
-				<%= form_for(:user,:url=>{:action=>'create'},:html => { :multipart => true }) do |f| %>
-				
-				<%= render(:partial=>'shared/form_user',:locals=>{:f=>f,:creating_user=>true}) %>
-				
-				<%= submit_tag("Create account",class:'btn btn-primary margin-top-10') %>
-				
-				<% end %>
+	<div class="row">
+		<div class="well">
+			
+	
+			<div class="row">
+				<div class="col-md-5">
+					<div class="login-container">
+					<!-- LOGIN FORM -->
+						<div class="rform-heading text-center">SIGN IN</div>
+						<div class="rform-body">
+							<%= form_tag(:action=>'login_attempt') do %>
+								
+								<%= text_field_tag(:username,nil,class:'form-control margin-top-10',placeholder:'Username')%>
+							
+								<%= password_field_tag(:password,nil,class:'form-control margin-top-10',placeholder:'Password')%>
+								<%= button_tag("Sign in",class:"btn btn-lg btn-block btn-success",data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Signing in..."}) %>
+							<% end %>
+						</div>
+					</div>
 				</div>
+				<div class="col-md-7 register-container">
+					<!-- REGISTRATION FORM -->
+					
+					<div class="rform-heading text-center">REGISTER</div>	
+					<div class="rform-body">
+						<%= form_for(:user,:url=>{:action=>'create'},:html => { :multipart => true }) do |f| %>
+						<%= render(:partial=>'shared/form_user',:locals=>{:f=>f,:creating_user=>true}) %>
+						
+						<%= button_tag("Register",class:'btn btn-success btn-block btn-lg margin-top-10',
+						data:{disable_with:"<i class='fa fa-spinner fa-spin'></i> Creating account..."}) %>
+						
+						<% end %>
+					</div>
+				</div>
+			</div>
+			
 		</div>
-	</div>
 	</div>
 </div>

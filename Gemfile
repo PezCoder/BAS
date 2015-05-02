@@ -14,6 +14,9 @@ gem 'autoprefixer-rails', '~> 5.1.7.1'
 #font awesome
 gem 'font-awesome-sass', '~> 4.3.0'
 
+# Sass rails required for font-awesome
+gem 'sass-rails', '~> 5.0.3'
+
 #gem "paperclip", "~> 4.2"
 
 # Use SCSS for stylesheets

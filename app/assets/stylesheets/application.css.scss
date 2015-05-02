@@ -1,8 +1,14 @@
+//flash animation
 @import "animate.css";
+
+//basic boostrap & theme
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "levish-bootstrap.scss";
-@import "font-awesome.css";
+
+//font awwesome
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 //@import "slate.scss";
 /* DEFINE CONSTANTS */
@@ -290,4 +296,52 @@ hr{
 		}
 	}
 	
+}
+
+/* LOGIN & REGISTER PAGE */
+.users.login,.users.edit{
+	.row{
+		padding-top:20px;
+		padding-bottom:20px;
+	}
+	input{
+		margin-top:10px;
+		margin-bottom: 10px;
+	}
+
+	.rform-heading{
+		font-size: 18px;
+		padding-bottom:10px;
+		border-bottom:1px solid #ccc;
+		margin-bottom: 20px;
+	}
+	.login-container{
+		padding-left:50px;
+		padding-right:50px;
+	}
+	.register-container{
+		border-left : 1px dashed #ccc;
+		padding-right:50px;
+		padding-left:50px;
+	}
+	#user_username{
+		width:48%;
+		float:left;
+		margin:0;
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+	#user_password{
+		margin:0;
+		margin-bottom: 10px;
+		width:48%;
+		float:right;
+	}
+
+	.well{
+		width:80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 }
