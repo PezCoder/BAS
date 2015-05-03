@@ -53,21 +53,26 @@ body{
 
 }
 
+/* Navigation bar */
+
 nav.navbar{
-	border:0;
-	border-radius:0;
-	margin-bottom:0;
+		border:0;
+		border-radius:0;
+		margin-bottom:0;
 }
-nav ul.nav{
-	display:inline-block;
-	float:right;
-}
-nav .navbar-header a{
-	font-size:30px;
-	letter-spacing:0.1em;
-}	
-nav .navbar-brand img{
-	
+
+nav{
+
+	 ul.nav{
+		display:inline-block;
+		float:right;
+	} 
+
+	.navbar-header a{
+		font-size:30px;
+		letter-spacing:0.1em;
+	}	
+
 }
 
 .navbar-collapse{
@@ -300,6 +305,7 @@ hr{
 
 /* LOGIN & REGISTER PAGE */
 .users.login,.users.edit{
+
 	.row{
 		padding-top:20px;
 		padding-bottom:20px;
@@ -339,9 +345,12 @@ hr{
 	}
 
 	.well{
+
+		border-top:2px solid rgb(92,184,92);
 		width:80%;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 }
+
