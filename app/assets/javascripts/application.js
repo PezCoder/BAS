@@ -15,6 +15,10 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+// Turbo links events are used here 
+
 $(document).on("ready page:load", function(){
 	
 	//Notice : Fadein and fadeout
@@ -26,13 +30,19 @@ $(document).on("ready page:load", function(){
 	//Error & warning messages : Shake
 	$('#error').addClass('animated shake');
 	$('#warning').addClass('animated shake');
-	
+	//hide loading on page loads
+	$('.loading').hide();
 });
+
 
 // Page change animation
 // $(document).on('page:change', function() {
-//       $('section').addClass('animated zoomIn');
+	  
 // });
- //$(document).on('page:fetch', function() {
- //        $('section').addClass('animated zoomOut');
- //});
+
+// Loading Animation when page is fetched
+ $(document).on('page:fetch', function() {
+ 		$('.loading').show();
+ 		//make everything in section blurred
+ 		$('section > *').wrap('<div class="blur-all">');
+ });

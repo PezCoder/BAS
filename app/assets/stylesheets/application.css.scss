@@ -53,6 +53,25 @@ body{
 
 }
 
+/* Loading Aniamtion */
+.blur-all {
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+}
+.loading{
+	position:fixed;
+	top:39%;
+	left:45%;
+	z-index:200;
+	-webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: blur(0px);
+}
 /* Navigation bar */
 
 nav.navbar{
