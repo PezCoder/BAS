@@ -12,6 +12,7 @@
 
 //@import "slate.scss";
 /* DEFINE CONSTANTS */
+
 .box-shadow{
 	box-shadow: 2px 2px 7px grey;
 }
@@ -319,6 +320,14 @@ hr{
 			}
 		}
 	}
+
+	/* OTHER ADS */
+	.other_ads{
+		text-align: center;
+		img{
+			margin:15px auto;
+		}
+	}
 	
 }
 
@@ -372,4 +381,6 @@ hr{
 	}
 
 }
+
+
 
