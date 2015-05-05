@@ -35,10 +35,11 @@ $(document).on("ready page:load", function(){
 });
 
 
-// Page change animation
-// $(document).on('page:change', function() {
-	  
-// });
+
+ $(document).on('page:change', function() {
+	 $('.loading').hide();
+	 $('.blur-all').removeClass('blur-all');
+ });
 
 // Loading Animation when page is fetched
  $(document).on('page:fetch', function() {
