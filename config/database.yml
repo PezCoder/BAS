@@ -13,9 +13,9 @@ default: &default
   adapter: postgresql
   encoding: utf8
   pool: 5
-  username: online_market
-  password: inferno#
-  host: localhost
+  username: 
+  password: 
+ # host: localhost
 
 development:
   <<: *default
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: online_market_production
-  username: online_market
-  password: <%= ENV['ONLINE_MARKET_DATABASE_PASSWORD'] %>
+  username: 
+  password: 
