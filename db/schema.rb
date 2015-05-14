@@ -22,13 +22,6 @@ ActiveRecord::Schema.define(version: 20150418134222) do
     t.datetime "updated_at",                    null: false
   end
 
-  create_table "admin_users_users", force: :cascade do |t|
-    t.integer "admin_user_id", limit: 4
-    t.integer "user_id",       limit: 4
-  end
-
-  add_index "admin_users_users", ["admin_user_id", "user_id"], name: "index_admin_users_users_on_admin_user_id_and_user_id", using: :btree
-
   create_table "bids", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.integer  "product_id", limit: 4
