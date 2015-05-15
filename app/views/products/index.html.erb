@@ -1,6 +1,6 @@
 <div class="row products index">
 				<!-- 3 column layout -->
-		<div class="col-md-2 col-sm-4 cat-subcat fixed">
+		<div class="col-md-2 col-sm-3 cat-subcat fixed">
 			<div class="inside_border">
 				<h4><span class="glyphicon glyphicon-filter"></span>Filters :</h4>
 				<hr>
@@ -44,7 +44,7 @@
 		
 			
 <!-- DISPLAYING ALL PRODUCTS -->
-	<div class="col-md-7 col-sm-8 all-products">
+	<div class="col-md-7 col-sm-9 all-products">
 		<div class="inside_border tagline">
 			<h3>Sell or Post Free Ad
 				<%= link_to({:controller=>'products',:action=>'new'},class:'post_new_ad') do %>
@@ -79,8 +79,9 @@
 			<% end %>
 		</div>
 	</div>
-	<div class="col-md-3 col-sm-12 other_ads">
 	<!-- OTHER ADS HERE -->
+	 <div class=" col-md-3 other_ads">
+	
 		<div class="inside_border">
 			<%= image_tag 'internshala_ad.gif' %>
 			<%= image_tag 'mba_ad.jpg' %>

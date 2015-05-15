@@ -16,11 +16,15 @@
 							
 								<%= password_field_tag(:password,nil,class:'form-control margin-top-10',placeholder:'Password')%>
 								<%= button_tag("Sign in",class:"btn btn-lg btn-block btn-success",data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Signing in..."}) %>
+								
 							<% end %>
+							<button class="btn btn-lg btn-block btn-danger" id="register_open">
+									Register
+								</button>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-7 register-container">
+				<div class="col-md-7 register-container" id="register-container">
 					<!-- REGISTRATION FORM -->
 					
 					<div class="rform-heading text-center">REGISTER</div>	

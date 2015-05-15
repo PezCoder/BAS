@@ -326,6 +326,8 @@ hr{
 				border-radius:0px;
 			}
 		}
+
+
 	}
 
 	/* OTHER ADS */
@@ -387,8 +389,84 @@ hr{
 		margin-left: auto;
 		margin-right: auto;
 	}
+	#register_open{
+		display:none;
+	}
 
 }
 
+/* RESPONSIVE SETTINGS */
 
+/* Samll resolution PC's */
+@media(max-width: 990px){
 
+	.products.index{
+		.other_ads{
+			margin-top: 10px;
+			img{
+				margin:15px;
+			}
+		}
+
+	}
+
+	.users.login{
+		.register-container{
+			margin-top:30px;
+			border-top : 1px dashed #ccc;
+			border-left:0;
+			padding-top:30px;
+			padding-bottom:30px;
+		}
+	
+	}
+
+}
+
+/* Tablets */
+@media(max-width: 768px){
+
+	.products.index{
+		// equal margins for all boxes
+		.inside_border{
+			margin:7px;
+		}
+		
+	}
+
+	.navbar-header{
+		position:relative;
+		.navbar-text{
+			//remove tag line on smaller devices
+			border:1px dotted blue;
+			display:none;
+		}
+		a{
+			//position brand logo
+			display:inline-block;
+			position:absolute;
+			top:10px;
+			left:14px;
+		}
+	}
+
+	ul.navbar-nav{
+		// fix for non clickable links on nav
+		position:relative;
+		z-index:20;
+		top:3px;
+	}
+}
+
+/* Mobile Phones */
+@media(max-width:555px){
+	.products.index{
+		.inside_border.tagline{
+			.post_new_ad{
+				//post ad button positioning
+				top:8px;
+				left:0px;
+			}
+		}
+	}
+}
