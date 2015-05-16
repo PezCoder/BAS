@@ -343,6 +343,29 @@ hr{
 	
 }
 
+/* Products Show */
+.products.show{
+	/* Previous Bids */
+	.bids_list{
+		background-color:white;
+		p{
+		color:black;
+		}
+		img{
+		display:inline-block;
+		
+		float:left;
+		height:100%;
+		}
+		.each_bid{
+
+		}
+		.each_bid_details{
+		
+		border:1px solid red;
+		}
+	}
+}
 /* LOGIN & REGISTER PAGE */
 .users.login,.users.edit{
 

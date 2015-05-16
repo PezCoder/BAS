@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 	validates :email,:uniqueness=>true
 
 	#for paperclip
-	has_attached_file :profile_image,:styles=>{:large=>"400x400>",:medium=>"250x180>",:thumb=>"50x50#"}
+	has_attached_file :profile_image,:styles=>{:large=>"400x400>",:medium=>"250x180>",:thumb=>"50x50#",:small=>"180x180>"}
 	validates_attachment_content_type :profile_image, :content_type => /\Aimage\/.*\Z/
 	
 	private 

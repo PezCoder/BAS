@@ -53,25 +53,26 @@
 					
 				<% end %>
 			</div>
-
-			<div class="bids_list">
-				<h2>Previous Bids</h2>
-				<% @bids.each do |bid| %>
-					<% if bid.value %>
-						<div class="each_bid">
-							<%= image_tag bid.user.profile_image.url(:thumb) %>
-							<h3><%= bid.user.name %></h3>
-							<p><%= bid.value %></p>
-						</div>
-					<% end %>
-				<% end %>
-			</div>
 		<% end %>
-		
+		</div>
 	</div>
-</div>
-		
-		
-	
-	
+
+	<!-- Display all bids -->
+	<% if @product.can_bid %>
+		<div class="bids_list">
+			<h2>Previous Bids</h2>
+			<% @bids.each do |bid| %>
+				<% if bid.value %>
+					<div class="each_bid">
+						<%= image_tag bid.user.profile_image.url(:medium) %>
+						<div class="each_bid_details">
+							<h3><%= bid.user.name %></h3>
+							<p><i><%= time_ago_in_words(bid.created_at) %> ago</i></p>
+							<p>Rs.<%= bid.value %></p>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	<% end %>
 </div>
