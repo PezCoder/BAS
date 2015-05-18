@@ -1,4 +1,4 @@
-== BAS - Online Market
+== BAS - Online Market 
 BAS ( Buy, Advertise, Sell) is an online market where a user can buy, sell or advertise different products including second hand or new products.
 I have also implemented messaging & bidding system.
 
@@ -7,4 +7,4 @@ I have also implemented messaging & bidding system.
 2. HTML, SCSS, jQuery, Bootstrap - To make the website responsive. (Front-end)
 3. MySQL - Database used. (Back-end)
 
-
+===Link to website : http://bas-market.blogspot.com
