@@ -11,6 +11,7 @@ group :development do
 end
 
 group :production do 
+	gem 'pg'
 	gem 'rails_12factor'
 end
 
@@ -70,4 +71,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #paperclip
 gem "paperclip", "~> 4.2"
 
-gem 'thin'
