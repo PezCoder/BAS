@@ -354,28 +354,27 @@ hr{
 	/* Previous Bids */
 	
 	.bids_list{
-
+		border-radius:3px;
 		background-color:white;
 		p{
 		color:black;
 		}
 		
 		h2{
-
 			background-color:$main-color;
 			color:white;
 			margin:0;
 			text-align:center;
 			padding:20px;
 			border-top:5px solid $main-color;
-			border-radius:10px;
+			
 		}
 		.each_bid{
 			position:relative;
 			padding:0;
 			display:inline-block;
 			text-align: center;
-			margin:15px 0;
+			margin:40px 0;
 
 			&:nth-child(odd){
 				h2{

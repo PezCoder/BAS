@@ -61,9 +61,11 @@
 	<% if @product.can_bid %>
 		<div class="bids_list">
 		<div class="row">
-			<h2>Previous Bids</h2>
+		
+			<div class="col-md-12">
+				<h2>Previous Bids</h2>
+			</div>
 			<% @bids.each do |bid| %>
-				<% 6.times do |x| %>
 				<% if bid.value %>
 					<div class="each_bid col-md-6">
 						<%= image_tag bid.user.profile_image.url(:medium) %>
@@ -73,7 +75,6 @@
 							<p>Rs.<%= bid.value %></p>
 						</div>
 					</div>
-				<% end %>
 				<% end %>
 			<% end %>
 		</div>
