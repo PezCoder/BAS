@@ -60,10 +60,12 @@
 	<!-- Display all bids -->
 	<% if @product.can_bid %>
 		<div class="bids_list">
+		<div class="row">
 			<h2>Previous Bids</h2>
 			<% @bids.each do |bid| %>
+				<% 6.times do |x| %>
 				<% if bid.value %>
-					<div class="each_bid">
+					<div class="each_bid col-md-6">
 						<%= image_tag bid.user.profile_image.url(:medium) %>
 						<div class="each_bid_details">
 							<h3><%= bid.user.name %></h3>
@@ -72,7 +74,9 @@
 						</div>
 					</div>
 				<% end %>
+				<% end %>
 			<% end %>
+		</div>
 		</div>
 	<% end %>
 </div>

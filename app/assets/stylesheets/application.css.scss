@@ -14,7 +14,12 @@
 
 //@import "slate.scss";
 /* DEFINE CONSTANTS */
+$hr:#ccc;
+$main-color:#1a2327;
 
+.panel,.send_message,.place_bid,.bids_list{
+	box-shadow: 2px 2px 7px grey;
+}
 .box-shadow{
 	box-shadow: 2px 2px 7px grey;
 }
@@ -131,7 +136,7 @@ nav{
 .all-products,.cat-subcat,.other_ads{
 	
 	.inside_border{
-		border: 1px solid #ccc;
+		border: 1px solid $hr;
 		border-radius:4px;
 		background-color:white;
 		padding:15px;
@@ -170,7 +175,7 @@ nav{
 }
 /* Each Product display products show*/
 .product_details{
-	border-color:#ccc;
+	border-color:$hr;
 
 	
 	img{
@@ -196,7 +201,7 @@ nav{
 	
 	background-color:#eee;
 	
-	border: 1px solid #ccc;
+	border: 1px solid $hr;
 	border-radius:3px;
 	padding:25px 30px;
 
@@ -211,7 +216,7 @@ nav{
 	margin-bottom:27px;
 }
 hr{
-	border-color:#ccc;
+	border-color:$hr;
 }
 
 
@@ -243,7 +248,7 @@ hr{
 	position:relative;
 	padding-bottom:40px;
 	background-color:#eee;
-	border:1px solid #ccc;
+	border:1px solid $hr;
 	border-radius:3px;
 
 	.post_new_ad{
@@ -345,25 +350,56 @@ hr{
 
 /* Products Show */
 .products.show{
+	position:relative;
 	/* Previous Bids */
+	
 	.bids_list{
+
 		background-color:white;
 		p{
 		color:black;
 		}
-		img{
-		display:inline-block;
 		
-		float:left;
-		height:100%;
+		h2{
+
+			background-color:$main-color;
+			color:white;
+			margin:0;
+			text-align:center;
+			padding:20px;
+			border-top:5px solid $main-color;
+			border-radius:10px;
 		}
 		.each_bid{
+			position:relative;
+			padding:0;
+			display:inline-block;
+			text-align: center;
+			margin:15px 0;
 
+			&:nth-child(odd){
+				h2{
+					text-align:justify;
+				}
+			}
+
+			img{
+				border-radius:100px;
+				vertical-align: top;
+				display:inline-block;
+			}
+			.each_bid_details{
+				margin-top:10px;
+				margin-left:17px;
+				display:inline-block;
+				height:100%;
+				h2{
+					padding:0;
+				}
+				max-width:40%;
+			}
 		}
-		.each_bid_details{
 		
-		border:1px solid red;
-		}
 	}
 }
 /* LOGIN & REGISTER PAGE */
@@ -381,7 +417,7 @@ hr{
 	.rform-heading{
 		font-size: 18px;
 		padding-bottom:10px;
-		border-bottom:1px solid #ccc;
+		border-bottom:1px solid $hr;
 		margin-bottom: 20px;
 	}
 	.login-container{
@@ -389,7 +425,7 @@ hr{
 		padding-right:50px;
 	}
 	.register-container{
-		border-left : 1px dashed #ccc;
+		border-left : 1px dashed $hr;
 		padding-right:50px;
 		padding-left:50px;
 	}
@@ -438,7 +474,7 @@ hr{
 	.users.login{
 		.register-container{
 			margin-top:30px;
-			border-top : 1px dashed #ccc;
+			border-top : 1px dashed $hr;
 			border-left:0;
 			padding-top:30px;
 			padding-bottom:30px;
