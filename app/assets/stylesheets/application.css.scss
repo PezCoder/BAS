@@ -14,8 +14,9 @@
 
 //@import "slate.scss";
 /* DEFINE CONSTANTS */
+
 $hr:#ccc;
-$main-color:#1a2327;
+$main-color:rgb(55,75,85);
 
 .panel,.send_message,.place_bid,.bids_list{
 	box-shadow: 2px 2px 7px grey;
@@ -41,6 +42,7 @@ $main-color:#1a2327;
 /* POST AD BUTTON */
 
 /* UNIVERSAL */
+
 img{
 	border-radius:4px;
 	opacity:0.91;
@@ -87,6 +89,8 @@ body{
     -ms-filter: blur(0px);
     filter: blur(0px);
 }
+
+
 /* Navigation bar */
 
 nav.navbar{
@@ -366,15 +370,36 @@ hr{
 			margin:0;
 			text-align:center;
 			padding:20px;
-			border-top:5px solid $main-color;
 			
 		}
 		.each_bid{
+
 			position:relative;
 			padding:0;
 			display:inline-block;
 			text-align: center;
 			margin:40px 0;
+			
+			/* Fades in animation on scroll */
+			transition:all 0.4s ease-in-out;
+
+			-webkit-transform:translateX(-30px);
+			-moz-transform:translateX(-30px);
+			-ms-transform:translateX(-30px);
+			-o-transform:translateX(-30px);
+			transform:translateX(-30px);
+
+			opacity:0;
+
+			&.img-fade-in{
+				opacity:1;
+
+				-webkit-transform:translateX(0);
+				-moz-transform:translateX(0);
+				-ms-transform:translateX(0);
+				-o-transform:translateX(0);
+				transform:translateX(0);
+			}
 
 			&:nth-child(odd){
 				h2{
@@ -386,7 +411,9 @@ hr{
 				border-radius:100px;
 				vertical-align: top;
 				display:inline-block;
+				
 			}
+
 			.each_bid_details{
 				margin-top:10px;
 				margin-left:17px;

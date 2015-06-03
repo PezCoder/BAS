@@ -47,3 +47,16 @@ $(document).on("ready page:load", function(){
  		//make everything in section blurred
  		$('section > *').wrap('<div class="blur-all">');
  });
+
+
+// fade-in bidders
+$(window).scroll(function(){
+	var wScroll = $(this).scrollTop();
+	if(wScroll > $('.bids_list').offset().top- ($(window).height()*0.7)){
+		$('.each_bid img').each(function(i){
+			setTimeout(function(){
+				$('.each_bid').eq(i).addClass('img-fade-in');
+			},150*(i+1));
+		});
+	}
+});
