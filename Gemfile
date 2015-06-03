@@ -5,14 +5,17 @@ ruby '2.1.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 
-group :production do 
-	gem 'pg'
-	gem 'rails_12factor'
-end
 group :development do 
 	# Use mysql as the database for Active Record
 	gem 'mysql2'
 end
+
+group :production do 
+	gem 'pg'
+	gem 'rails_12factor'
+	gem 'thin'
+end
+
 
 #bootstrap 
 gem 'bootstrap-sass', '~> 3.3.4.1'
@@ -68,4 +71,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #paperclip
 gem "paperclip", "~> 4.2"
+gem 'aws-sdk', '< 2.0'
+
 
