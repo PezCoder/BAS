@@ -18,6 +18,8 @@
 						 <span class="glyphicon glyphicon-phone"></span> <%= @product.user.mobile_no %>
 						 </div>
 					</div>
+
+					 <p><i>Posted <%= time_ago_in_words(@product.created_at) %> ago</i></p>
 				</div>
 				<div class="panel-body">
 					<%= image_tag @product.image.url(:large) %>

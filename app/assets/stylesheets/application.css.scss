@@ -3,7 +3,7 @@
 //basic boostrap & theme
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "levish-bootstrap.scss";
+@import "levish-bootstrap";
 
 //flash animation
 @import "flash-animate";
@@ -18,9 +18,6 @@
 $hr:#ccc;
 $main-color:rgb(55,75,85);
 
-.panel,.send_message,.place_bid,.bids_list{
-	box-shadow: 2px 2px 7px grey;
-}
 .box-shadow{
 	box-shadow: 2px 2px 7px grey;
 }
@@ -190,13 +187,31 @@ nav{
 	}
 
 	.panel-heading{
+		overflow:auto;
 		h3{
 			display: inline-block;
+			float:left;
+			position:relative;
+			top:-13px;
+			padding-left:16px;
 		}
-		div{
-			display: inline-block;
+		.info-container{
+			float:right;
+			padding-top:40px;
+			.info{
+				display:inline-block;
+
+			}
+			
 		}
-		
+		p{
+			display:inline-block;
+			position:relative;
+			top:40px;
+			left:-91px;
+			padding-left:2px;
+
+		}
 		
 	}
 }
@@ -357,6 +372,10 @@ hr{
 	position:relative;
 	/* Previous Bids */
 	
+	.panel,.send_message,.place_bid,.bids_list{
+		box-shadow: 2px 2px 7px grey;
+	}
+
 	.bids_list{
 		border-radius:3px;
 		background-color:white;
