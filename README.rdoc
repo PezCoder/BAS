@@ -7,4 +7,4 @@ I have also implemented messaging & bidding system.
 2. HTML, SCSS, jQuery, Bootstrap - To make the website responsive. (Front-end)
 3. MySQL - Database used. (Back-end)
 
-===Link to website : http://bas-market.blogspot.com
+===Link to website : http://bas-market.herokuapp.com
