@@ -13,6 +13,6 @@ It also includes features like Searching, Filtering, Messaging & Bidding.
 
 http://bas-market.herokuapp.com
 
-## Licencse
-
-BAS is released under the terms of the [MIT License](http://www.opensource.org/licenses/MIT).
+## License
+Copyright (c) 2015 Rahul Gupta
+BAS is licensed under the terms of the [MIT License](http://www.opensource.org/licenses/MIT).
